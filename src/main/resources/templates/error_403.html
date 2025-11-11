@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/layout :: head}"></head>
+<body>
+
+<header th:replace="~{layout/layout :: header}"></header>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-exclamation-triangle"></i> Error: Acceso Denegado
+                    </h2>
+                </div>
+                <div class="card-body text-center p-5">
+                    <div class="mb-4">
+                        <i class="fas fa-lock fa-5x text-danger"></i>
+                    </div>
+                    <h3 class="text-danger mb-3">Error 403: Forbidden</h3>
+                    <p class="lead mb-4">
+                        Lo sentimos <span class="text-primary" th:text="${#authentication.name}"></span>,
+                        <strong>NO</strong> tienes permisos para acceder a este recurso.
+                    </p>
+                    <hr>
+                    <p class="text-muted">
+                        Esta acción requiere privilegios de administrador. Si crees que deberías tener acceso,
+                        contacta al administrador del sistema.
+                    </p>
+                    <a th:href="@{/listar}" class="btn btn-success mt-3">
+                        <i class="fas fa-home"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{layout/layout :: footer}"></footer>
+
+</body>
+</html>
